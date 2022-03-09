@@ -90,7 +90,7 @@
     .inner_two {
       width: 100%;
       border: .5em solid rgb(247, 227, 162);
-      margin: 0 auto;
+      margin: 40px auto 0;
 
       border-collapse: separate;
       border-spacing: 1em 0;
@@ -115,16 +115,19 @@
       width: 90%;
     }
 
-    .add span {
+    /* .add span {
       color: #111;
       font-weight: 900;
-    }
+    } */
 
     .aoi {
       text-align: center;
-      margin: .25em 0;
-      font-size: 3em;
+      width: 350px;
+      margin: .5em auto;
+      font-size: 2.5em;
+      padding: .25em 1em;
       color: #ca1f26;
+      border: 2px solid green;
     }
 
     .sq {
@@ -134,12 +137,18 @@
       color: rgb(95, 89, 89);
     }
 
+    /* .date-c {
+      display: flex;
+      justify-content: end;
+    } */
+
     .date {
       border: 2px dashed rgb(243, 187, 102);
       padding: .5em;
       font-size: 1.5em;
       font-weight: 700;
       width: 120px;
+      margin-left: 250px;
       
     }
 
@@ -206,9 +215,9 @@
       color: #ca1f26;
     }
 
-    .dynamic {
+    /* .dynamic {
       color: navy;
-    }
+    } */
 
     .gf {
       text-align: right;
@@ -326,7 +335,7 @@
                   </table>
                 </td>
                 
-                <td>
+                <td align="right">
                   <p class="date"><span>Date:</span> {!! date('d/M/Y', strtotime($d['date'])) !!}</p>
                 </td>
               </tr>
@@ -522,7 +531,7 @@
                         <p>13</p>
                       </td>
                       <td>
-                        <p class="service">GST liability (applicable as per law) <span class="dynamic">{{$d['gst_r']}}</span> @
+                        <p class="service">GST liability (applicable as per law) @
                           <span class="dynamic">{{$d['gst_p']}}</span> % in case of Proprietorship / Individual
                         </p>
                       </td>

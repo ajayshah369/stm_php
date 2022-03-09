@@ -56,6 +56,6 @@ class SendQuotation extends Mailable
     public function build()
     {
         $pdf = PDF::loadView('emails.quotationPdf', ['d' => $this->d]);
-        return $this->subject('Quotation From 1st Shivam Trans Movers')->view('emails.quotation')->attachData($pdf->output(), 'quotation.pdf');
+        return $this->subject('Quotation From 1st Shivam Trans Movers')->view('emails.quotationE')->attachData($pdf->output(), 'quotation.pdf');
     }
 }

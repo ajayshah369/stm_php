@@ -182,7 +182,7 @@
 					  
 					  <tr>
 					    <td colspan="3" class="text_two">13. GST liability (applicable as per law)
-					      <input type="text" name="gst_r" size="6"> @  <input type="text" name="gst_p" size="6"> in case of Proprietorship / Individual
+					       @  <input type="text" name="gst_p" size="6"> in case of Proprietorship / Individual
 					      </td>
 					    <td class="text">Rs.
 					      <input name="gst_amount" type="text"></td>

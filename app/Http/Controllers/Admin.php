@@ -25,7 +25,7 @@ class Admin extends Controller
 
         // return view('emails.quotation', ['data' => $request]);
 
-        \Mail::to(array($request->email, 'mail@shivamcargo.com'))->send(new SendQuotation($request));
+        \Mail::to(array($request->email, env('MAIL_TO')))->send(new SendQuotation($request));
 
         return view('admin.quotation_sent');
     }

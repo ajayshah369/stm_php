@@ -26,7 +26,7 @@ class Inquiries extends Controller
 					$data['query'];
 				}
 
-				\Mail::to(array('mail@shivamcargo.com'))->send(new QI($data));
+				\Mail::to(array(env('MAIL_TO')))->send(new QI($data));
 
         return response()->json([
             'status' => 'success',
@@ -39,7 +39,7 @@ class Inquiries extends Controller
         if ($phone_number != '') {
 					DB::table('call_back_requests')->insert(['phone_number' => $phone_number]);
 
-					\Mail::to(array('mail@shivamcargo.com'))->send(new CBR($request));
+					\Mail::to(array(env('MAIL_TO')))->send(new CBR($request));
 
 				}
 
@@ -184,7 +184,7 @@ class Inquiries extends Controller
 
 				$d = array('id' => $id);
 
-				\Mail::to(array('mail@shivamcargo.com'))->send(new I($d));
+				\Mail::to(array(env('MAIL_TO')))->send(new I($d));
 
         return redirect('/');
     }
