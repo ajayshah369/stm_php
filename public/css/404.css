@@ -1,0 +1,17 @@
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#not-found {
+	flex-grow: 1;
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+#not-found img {
+	margin: 0 auto;
+	width: 75%;
+	max-width: 500px;
+}

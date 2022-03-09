@@ -1,0 +1,307 @@
+#bg {
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(to left, #f6d365 0%, #fda085 100%);
+	position: relative;
+}
+
+#bg h1 {
+	color: #eee;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10%;
+	font-size: 2em;
+	border-bottom: 2px solid #fff;
+}
+
+.about {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	grid-gap: 2em;
+	overflow: hidden;
+}
+
+.about img {
+	width: 45%;
+	border-radius: 8px;
+}
+
+.about .about_content {
+	width: 45%;
+	display: flex;
+	flex-direction: column;
+	grid-gap: 1em;
+}
+
+@media (max-width: 1250px) {
+	.about {
+		flex-direction: column;
+		align-items: center;
+	}
+	.about img {
+		width: 60%;
+	}
+	.about .about_content {
+		width: 60%;
+	}
+}
+
+@media (max-width: 1000px) {
+	#bg {
+		height: 250px;
+	}
+
+	.about img {
+		width: 80%;
+	}
+	.about .about_content {
+		width: 80%;
+	}
+}
+
+@media (max-width: 600px) {
+	#bg {
+		height: 200px;
+	}
+
+	.about img {
+		width: 100%;
+	}
+	.about .about_content {
+		width: 100%;
+	}
+}
+
+.vm {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	grid-gap: 2em;
+	overflow: hidden;
+}
+
+.vm .vm_content {
+	box-shadow: 0 0 13px 7px #d7d1d1;
+	padding: 1em;
+	width: 45%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	grid-gap: 1em;
+}
+
+.vm .vm_content img {
+	width: 5em;
+}
+
+@media (max-width: 1000px) {
+	.vm {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.vm .vm_content {
+		width: 80%;
+	}
+}
+
+@media (max-width: 600px) {
+	.vm .vm_content {
+		width: 100%;
+	}
+}
+
+.p3 {
+	padding: 2em;
+}
+
+.services {
+	padding: 2em 1em;
+	background-color: #ffc107;
+}
+
+.services h3 {
+	margin-bottom: 1em;
+}
+
+.services ul {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 2em;
+	list-style: none;
+}
+
+.services ul li {
+	background-color: #fff;
+	padding: 0.5em 1em;
+	width: fit-content;
+	width: 30%;
+}
+
+@media (max-width: 1300px) {
+	.services ul li {
+		width: 40%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.services ul li {
+		width: 45%;
+	}
+}
+
+@media (max-width: 600px) {
+	.services ul li {
+		width: 90%;
+	}
+}
+
+.services ul li a {
+	color: rgb(61, 12, 12);
+	font-weight: 600;
+}
+
+
+
+#our-team {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+#our-team h3 {
+	text-align: center;
+	width: fit-content;
+	margin: 0 auto 1em;
+	font-size: 2em;
+	border-bottom: 1px solid #000;
+}
+
+#our-team .team_content {
+	display: flex;
+	justify-content: center;
+	grid-gap: 2em;
+}
+
+#our-team .team_content * {
+	width: 45%;
+}
+
+@media (max-width: 1000px) {
+	#our-team .team_content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#our-team .team_content * {
+	width: 80%;
+}
+}
+
+@media (max-width: 600px) {
+	#our-team .team_content * {
+	width: 100%;
+}
+}
+
+#achievements {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+
+#achievements h3 {
+	text-align: center;
+	width: fit-content;
+	margin: 0 auto 1em;
+	font-size: 2em;
+	border-bottom: 1px solid #000;
+}
+
+#achievements .achievements {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 2em;
+	flex-wrap: wrap;
+}
+
+#achievements .achievements .achievement {
+	box-shadow: 0 0 13px 7px #d7d1d1;
+	width: 40%;
+	display: flex;
+	align-items: center;
+	grid-gap: 1em;
+	padding: 1em;
+}
+
+#achievements .achievements .achievement img {
+	width: 4em;
+}
+
+@media (max-width: 1300px) {
+	#achievements .achievements .achievement {
+		width: 45%;
+	}
+}
+
+@media (max-width: 1000px) {
+	#achievements .achievements .achievement {
+		width: 60%;
+	}
+}
+
+@media (max-width: 800px) {
+	#achievements .achievements .achievement {
+		width: 80%;
+	}
+}
+
+@media (max-width: 600px) {
+	#achievements .achievements .achievement {
+		width: 90%;
+	}
+}
+
+#about-data {
+	background-color: #ca1f26;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#about-data .about-data-c {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	grid-gap: .5em;
+	color: white;
+	box-shadow: inset 0 -4px 20px rgba(0, 0, 0, .2);
+	width: 25%;
+	height: 200px;
+}
+
+#about-data .about-data-c:hover{
+	box-shadow: inset 1px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+#about-data .about-data-c h1, #about-data .about-data-c h3 {
+	color: #fff;
+}
+
+#about-data .about-data-c i {
+	font-size: 4em;
+}
+
+@media (max-width: 1200px) {
+	#about-data .about-data-c {
+		width: 50%;
+	}
+}

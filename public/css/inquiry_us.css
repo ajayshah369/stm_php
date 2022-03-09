@@ -1,0 +1,155 @@
+
+
+#bg {
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(to left, #f6d365 0%, #fda085 100%);
+	position: relative;
+}
+
+#bg h1 {
+	color: #eee;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10%;
+	font-size: 2em;
+	border-bottom: 2px solid #fff;
+}
+
+form {
+	padding: 2em 1em;
+	background-color: rgb(252, 249, 245);
+}
+
+form h3 {
+	width: fit-content;
+	margin: 3em auto;
+	font-size: 1.5em;
+	font-weight: 700;
+	border-bottom: 1px solid #000;
+	text-align: center;
+}
+
+form h3 span {
+	font-weight: 400;
+	font-size: .75em;
+}
+
+.one {
+	width: fit-content;
+	margin: 0 auto;
+	/* display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(2, 1fr); */
+	display: flex;
+	flex-direction: column;
+	grid-gap: 1em;
+}
+
+.two {
+	width: fit-content;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 1em 10em;
+}
+
+@media (max-width: 1400px) {
+	.two {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 1em 6em;
+	}
+}
+
+@media (max-width: 850px) {
+	.two {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+
+.input {
+	display: flex;
+	grid-gap: 1em;
+}
+
+.input label {
+	width: 10em;
+	text-align: right;
+	color: #111;
+	font-size: .9em;
+	font-weight: 600;
+}
+
+.input_two label {
+	text-align: left !important;
+}
+
+.two .input label {
+	width: 12em;
+}
+
+.two .input input {
+	width: 5em;
+}
+
+.input input, .input select, .input textarea {
+	padding: .25em;
+	color: #333;
+	font-weight: 600;
+}
+
+
+.input input:focus-visible, .input select:focus-visible, .input textarea:focus-visible {
+	outline: none;
+	border: 2px solid #ca1f26;
+}
+
+.input select:focus-visible {
+	background-color: #fff;
+}
+
+@media (max-width: 600px) {
+	.input select, .input textarea {
+		width: 60%;
+	}
+}
+
+.other {
+	width: fit-content;
+	margin: 2em auto;
+}
+
+form button {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	height: 2em;
+	width: 9em;
+	background-color: #fff;
+	border: 2px solid #ca1f26;
+	border-radius: 1em;
+	color: #ca1f26;
+	font-weight: 600;
+	font-size: 1.5em;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+
+form button:hover {
+	background-color: #ca1f26;
+	color: #fff;
+}
+
+
+.errors {
+	width: fit-content;
+	margin: 2em auto;
+}
+
+.errors .error {
+	width: fit-content;
+	margin: .2em 0;
+	font-size: .75em;
+}
