@@ -26,7 +26,7 @@
     }
 
     body {
-      background-color: rgb(250, 249, 233);
+      background-color: rgba(255, 254, 253, 0.75);
       font-family: 'Roboto Slab', serif;
     }
 
@@ -89,7 +89,7 @@
 
     .inner_two {
       width: 100%;
-      border: .5em solid rgb(250, 246, 234);
+      border: .5em solid rgb(247, 227, 162);
       margin: 40px auto 0;
 
       border-collapse: separate;
@@ -122,7 +122,7 @@
 
     .aoi {
       text-align: center;
-      width: 350px;
+      width: 280px;
       margin: .5em auto;
       font-size: 2.5em;
       padding: .25em 1em;
@@ -297,7 +297,7 @@
               </tr>
 
               <tr>
-                <td>
+                <td style="width: 75%;">
                   <table style="border-collapse: separate;
       border-spacing: 0 .25em;">
                     <tr>
@@ -685,7 +685,7 @@
                         <p class="tcc"></p>
                       </td>
                       <td>
-                        <p class="tccc" style="font-size: 1.25em; color: blue">Thanking you and looking forward to
+                        <p class="tccc" style="font-size: 1.25em; color: navy">Thanking you and looking forward to
                           rendering our
                           best services to you.</p>
                       </td>
