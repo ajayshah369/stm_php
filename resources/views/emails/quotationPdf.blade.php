@@ -89,7 +89,7 @@
 
     .inner_two {
       width: 100%;
-      border: .5em solid rgb(247, 227, 162);
+      border: .5em solid rgb(250, 246, 234);
       margin: 40px auto 0;
 
       border-collapse: separate;
