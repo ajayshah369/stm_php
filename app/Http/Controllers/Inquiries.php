@@ -22,10 +22,6 @@ class Inquiries extends Controller
         $data = array('name' => $name, 'phone_number' => $phone_number, 'email' => $email, 'moving_from' => $moving_from, 'moving_to' => $moving_to, 'query' => $query);
         DB::table('quick_inquiries')->insert($data);
 
-				if (!$data['query']) {
-					$data['query'];
-				}
-
 				\Mail::to(array(env('MAIL_TO')))->send(new QI($data));
 
         return response()->json([
@@ -182,9 +178,8 @@ class Inquiries extends Controller
 
         $id = DB::table('inquiries')->insertGetId($data);
 
-				$d = array('id' => $id);
 
-				\Mail::to(array(env('MAIL_TO')))->send(new I($d));
+				\Mail::to(array(env('MAIL_TO')))->send(new I($data));
 
         return redirect('/');
     }

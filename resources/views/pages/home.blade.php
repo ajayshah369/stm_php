@@ -72,7 +72,7 @@
 			<div class="details" data-aos="slide-right">
 				<p>{!! $about_us->p1 !!}</p><p> </p><p>{!! $about_us->p2 !!}</p
 				><p>
-					<a href="/company-profile">Learn More</a>
+					<a href="/about-us">Learn More</a>
 				</p></div
 			>
 			<div class="about-image" data-aos="slide-left">
