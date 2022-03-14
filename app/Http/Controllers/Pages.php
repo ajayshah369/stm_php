@@ -18,7 +18,7 @@ class Pages extends Controller
         $top_services = DB::select('select * from services where highlight=1');
         $how_it_works = DB::select('select * from how_it_works');
         $our_clients = DB::select('select * from our_clients');
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
         return view('pages.home', ['contact' => $contact, 'seo' => $seo, 'active' => 'home', 'big_images' => $big_images, 'about_us' => $about_us, 'why_choose_us' => $why_choose_us, 'top_services' => $top_services, 'how_it_works' => $how_it_works, 'our_clients' => $our_clients, 'branches' => $branches]);
     }
@@ -29,7 +29,7 @@ class Pages extends Controller
         $contact = DB::select('select * from contact_us')[0];
         $about_us = DB::select('select * from about_us')[0];
         $services = DB::select('select * from services');
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
 
         return view('pages.about', ['seo' => $seo, 'contact' => $contact, 'about_us' => $about_us, 'services' => $services, 'branches' => $branches, 'active' => 'about-us']);
@@ -39,7 +39,7 @@ class Pages extends Controller
     {
         $seo = DB::select('select * from seo where page="services"')[0];
         $services = DB::select('select * from services');
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
         $contact = DB::select('select * from contact_us')[0];
 
 
@@ -50,7 +50,7 @@ class Pages extends Controller
         $seo = DB::select('select * from seo where page="process"')[0];
         $contact = DB::select('select * from contact_us')[0];
         $process = DB::select('select * from processes');
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
         return view('pages.process', ['seo' => $seo, 'contact' => $contact, 'process' => $process, 'branches' => $branches, 'active' => 'process']);
     }
@@ -59,7 +59,7 @@ class Pages extends Controller
         $seo = DB::select('select * from seo where page="clients"')[0];
         $contact = DB::select('select * from contact_us')[0];
         $clients = DB::select('select * from our_clients');
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
         return view('pages.clients', ['seo' => $seo, 'contact' => $contact, 'clients' => $clients, 'branches' => $branches, 'active' => 'clients']);
     }
@@ -67,7 +67,7 @@ class Pages extends Controller
     public function contact_us() {
         $seo = DB::select('select * from seo where page="contact-us"')[0];
         $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
         return view('pages.contact_us', ['seo' => $seo, 'contact' => $contact, 'branches' => $branches, 'active' => 'contact-us']);
     }
@@ -75,7 +75,7 @@ class Pages extends Controller
     public function gallery() {
         $seo = DB::select('select * from seo where page="gallery"')[0];
         $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
         $gallery = DB::select('select * from gallery order by date desc');
 
         return view('pages.gallery', ['seo' => $seo, 'contact' => $contact, 'branches' => $branches, 'gallery' => $gallery, 'active' => 'gallery']);
@@ -107,14 +107,14 @@ class Pages extends Controller
     public function branches() {
         $seo = DB::select('select * from seo where page="branches"')[0];
         $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
         return view('pages.branches', ['seo' => $seo, 'contact' => $contact, 'active' => 'branches', 'branches' => $branches]);
     }
 
     public function blog(Request $request) {
         $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
 
         $x = DB::select('select * from blogs where slug=?', [$request->slug]);
         
@@ -130,7 +130,7 @@ class Pages extends Controller
 
     public function service(Request $request) {
         $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
         
         $x = DB::select('select * from services where slug=?', [$request->slug]);
 
@@ -146,7 +146,7 @@ class Pages extends Controller
 
     public function branch(Request $request) {
         $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches');
+        $branches = DB::select('select * from branches order by title');
         $services = DB::select('select * from services');
         
         $x = DB::select('select * from branches where slug=?', [$request->slug]);
