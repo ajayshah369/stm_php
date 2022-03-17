@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+body {
+    font-family: "Roboto Slab", serif;
+}
+
+@media (max-width: 700px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+header {
+    background-color: navy;
+    padding: 1em 4em;
+    display: flex;
+    align-items: center;
+    grid-gap: 2em;
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 1em;
+    }
+}
+
+header img {
+    width: 5em;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: white;
+    font-size: 2em;
+}
+
+@media (max-width: 600px) {
+    header img {
+        width: 3em;
+        border-radius: 4px;
+    }
+
+    header h1 {
+        color: white;
+        font-size: 1.5em;
+    }
+}
+
+main {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    color: navy;
+    text-align: center;
+    margin: 1em 0;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+}
+
+#form input {
+    padding: 0.5em;
+    font-size: 1em;
+    font-weight: 700;
+    width: 300px;
+}
+
+#form button {
+    padding: 0.5em;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: navy;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}
+
+@media (max-width: 500px) {
+    #form {
+        flex-direction: column;
+        grid-gap: 1em;
+    }
+}

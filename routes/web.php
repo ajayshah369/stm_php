@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages;
 use App\Http\Controllers\Inquiries;
 use App\Http\Controllers\Admin;
+use App\Http\Controllers\Consignment;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +30,6 @@ Route::get('/blogs', [Pages::class, 'blogs']);
 Route::get('/branches', [Pages::class, 'branches']);
 Route::get('/blogs/{slug}', [Pages::class, 'blog']);
 Route::get('/services/{slug}', [Pages::class, 'service']);
-Route::get('/branches/{slug}', [Pages::class, 'branch']);
 
 Route::post('/quick-inquiry', [Inquiries::class, 'quick_inquiry']);
 Route::post('/call-back-request', [Inquiries::class, 'call_back_request']);
@@ -78,9 +78,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/admin/branches/{id}', [Ad
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin/branches/{id}/delete', [Admin::class, 'delete_branch']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/admin/branches/{id}', [Admin::class, 'm_branch']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/callbackrequests', [Admin::class, 'call_back_requests']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/callbackrequests/{id}', [Admin::class, 'call_back_request']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/callbackrequests/{id}/delete', [Admin::class, 'delete_call_back_request']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/callbackrequests', [Admin::class, 'call_back_requests']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/callbackrequests/{id}', [Admin::class, 'call_back_request']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/callbackrequests/{id}/delete', [Admin::class, 'delete_call_back_request']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin/contactus', [Admin::class, 'contact_us']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/admin/contactus', [Admin::class, 'm_contact_us']);
@@ -94,14 +94,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/admin/gallery/{id}/delete
 Route::middleware(['auth:sanctum', 'verified'])->post('/admin/gallery/{id}', [Admin::class, 'm_gall']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/inquiries', [Admin::class, 'inquiries']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/inquiries/{id}', [Admin::class, 'inquiry']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/inquiries/{id}/delete', [Admin::class, 'delete_inquiry']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/inquiries', [Admin::class, 'inquiries']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/inquiries/{id}', [Admin::class, 'inquiry']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/inquiries/{id}/delete', [Admin::class, 'delete_inquiry']);
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/quickinquiries', [Admin::class, 'quick_inquiries']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/quickinquiries/{id}', [Admin::class, 'quick_inquiry']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/admin/quickinquiries/{id}/delete', [Admin::class, 'delete_quick_inquiry']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/quickinquiries', [Admin::class, 'quick_inquiries']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/quickinquiries/{id}', [Admin::class, 'quick_inquiry']);
+// Route::middleware(['auth:sanctum', 'verified'])->get('/admin/quickinquiries/{id}/delete', [Admin::class, 'delete_quick_inquiry']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin/seo', [Admin::class, 'seos']);
@@ -115,3 +115,17 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/admin/services/add', [Ad
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin/services/{id}', [Admin::class, 'service']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/admin/services/{id}', [Admin::class, 'm_service']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/admin/services/{id}/delete', [Admin::class, 'delete_service']);
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/consignments/home', [Consignment::class, 'home']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/consignments/create', [Consignment::class, 'create']);
+Route::middleware(['auth:sanctum', 'verified'])->post('/consignments/create', [Consignment::class, 'post_create']);
+
+Route::get('/consignments/track', [Consignment::class, 'track']);
+Route::get('/consignments/track/{consignment_number}', [Consignment::class, 'track_consignment']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/consignments/{id}', [Consignment::class, 'get_consignment']);
+Route::middleware(['auth:sanctum', 'verified'])->post('/consignments/{id}', [Consignment::class, 'post_consignment']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/consignments/{id}/delete', [Consignment::class, 'delete_consignment']);
+
+Route::get('/{slug}', [Pages::class, 'branch']);

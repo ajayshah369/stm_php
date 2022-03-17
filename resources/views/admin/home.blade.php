@@ -98,7 +98,7 @@
                   
                 </tr>
               
-                <tr class="model-callbackrequest">
+                <!-- <tr class="model-callbackrequest">
                   
                     <th scope="row"><a href="/admin/callbackrequests/" tabindex="0">Call Back Requests</a></th>
                   
@@ -108,7 +108,7 @@
                   
 
                   
-                </tr>
+                </tr> -->
               
                 <tr class="model-contactus">
                   
@@ -146,7 +146,7 @@
                   
                 </tr> -->
               
-                <tr class="model-inquiry">
+                <!-- <tr class="model-inquiry">
                   
                     <th scope="row"><a href="/admin/inquiries/" tabindex="0">Inquiries</a></th>
                   
@@ -156,7 +156,7 @@
                   
 
                   
-                </tr>
+                </tr> -->
               
                 <!-- <tr class="model-ourclient">
                   
@@ -182,7 +182,7 @@
                   
                 </tr> -->
               
-                <tr class="model-quickinquiry">
+                <!-- <tr class="model-quickinquiry">
                   
                     <th scope="row"><a href="/admin/quickinquiries/" tabindex="0">Quick Inquiries</a></th>
                   
@@ -192,7 +192,7 @@
                   
 
                   
-                </tr>
+                </tr> -->
             
               
                 <tr class="model-seo">

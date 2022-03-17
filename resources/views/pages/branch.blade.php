@@ -64,7 +64,7 @@
 		<h3>Our Branches</h3>
 		<ul class="branches container">
 			@foreach ($branches as $branch)
-			<li><a href="/branches/{{$branch->slug}}" class="branch"> {{$branch->title}} </a></li>
+			<li><a href="/{{$branch->slug}}" class="branch"> {{$branch->title}} </a></li>
 			@endforeach
 		</ul>
 	</div>

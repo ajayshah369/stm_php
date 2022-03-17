@@ -1,0 +1,56 @@
+.not-found {
+    margin-top: 4em;
+}
+
+.not-found h3 {
+    color: brown;
+}
+
+.consignment {
+    margin-top: 4em;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 1em 0.5em;
+}
+
+th {
+    text-align: end;
+}
+
+.check-points {
+    margin-top: 2em;
+}
+
+.check-point {
+    display: flex;
+    align-items: center;
+    grid-gap: 1em;
+    color: #555;
+    margin-bottom: 2em;
+}
+
+.counter {
+    background-color: green;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.25em;
+    font-weight: 700;
+    position: relative;
+}
+
+.stepper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.15em;
+    height: 2em;
+    background-color: green;
+}

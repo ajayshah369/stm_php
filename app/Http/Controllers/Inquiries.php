@@ -20,7 +20,7 @@ class Inquiries extends Controller
         $query = $request->input('query');
 
         $data = array('name' => $name, 'phone_number' => $phone_number, 'email' => $email, 'moving_from' => $moving_from, 'moving_to' => $moving_to, 'query' => $query);
-        DB::table('quick_inquiries')->insert($data);
+        // DB::table('quick_inquiries')->insert($data);
 
 				\Mail::to(array(env('MAIL_TO')))->send(new QI($data));
 
@@ -33,7 +33,7 @@ class Inquiries extends Controller
     public function call_back_request(Request $request) {
         $phone_number = $request->input('phone_number');
         if ($phone_number != '') {
-					DB::table('call_back_requests')->insert(['phone_number' => $phone_number]);
+					//  DB::table('call_back_requests')->insert(['phone_number' => $phone_number]);
 
 					\Mail::to(array(env('MAIL_TO')))->send(new CBR($request));
 
@@ -176,7 +176,7 @@ class Inquiries extends Controller
             $data[$key] = $value;
         }
 
-        $id = DB::table('inquiries')->insertGetId($data);
+        // $id = DB::table('inquiries')->insertGetId($data);
 
 
 				\Mail::to(array(env('MAIL_TO')))->send(new I($data));
