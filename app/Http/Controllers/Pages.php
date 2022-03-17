@@ -128,26 +128,19 @@ class Pages extends Controller
         return view('pages.blog', ['blog' => $blog, 'seo' => $seo, 'contact' => $contact, 'active' => 'xxx', 'branches' => $branches]);
     }
 
-    public function service(Request $request) {
-        $contact = DB::select('select * from contact_us')[0];
-        $branches = DB::select('select * from branches order by title');
-        
-        $x = DB::select('select * from services where slug=?', [$request->slug]);
-
-        if (count($x) == 0) {
-            abort(404);
-        }
-        
-        $service = $x[0];
-        $seo = DB::select('select seo_title as title, seo_description as description, seo_keywords as keywords, seo_property_title as property_title, seo_property_description as property_description, seo_property_keywords as property_keywords, seo_twitter_title as twitter_title, seo_twitter_description as twitter_description, seo_twitter_keywords as twitter_keywords from services where slug=?', [$request->slug])[0];
-
-        return view('pages.service', ['service' => $service, 'seo' => $seo, 'contact' => $contact, 'active' => 'xxx', 'branches' => $branches]);
-    }
-
-    public function branch(Request $request) {
+    public function branch_service(Request $request) {
         $contact = DB::select('select * from contact_us')[0];
         $branches = DB::select('select * from branches order by title');
         $services = DB::select('select * from services');
+
+        $x = DB::select('select * from services where slug=?', [$request->slug]);
+
+        if (count($x) != 0) {
+            $service = $x[0];
+        $seo = DB::select('select seo_title as title, seo_description as description, seo_keywords as keywords, seo_property_title as property_title, seo_property_description as property_description, seo_property_keywords as property_keywords, seo_twitter_title as twitter_title, seo_twitter_description as twitter_description, seo_twitter_keywords as twitter_keywords from services where slug=?', [$request->slug])[0];
+
+        return view('pages.service', ['service' => $service, 'seo' => $seo, 'contact' => $contact, 'active' => 'xxx', 'branches' => $branches]);
+        }
         
         $x = DB::select('select * from branches where slug=?', [$request->slug]);
         

@@ -20,7 +20,7 @@ use App\Http\Controllers\Consignment;
 Route::get('/', [Pages::class, 'home']);
 Route::get('/about-us', [Pages::class, 'about_us']);
 Route::get('/services', [Pages::class, 'services']);
-Route::get('/process', [Pages::class, 'process']);
+Route::get('/packers-and-movers-process', [Pages::class, 'process']);
 Route::get('/clients', [Pages::class, 'clients']);
 Route::get('/contact-us', [Pages::class, 'contact_us']);
 Route::get('/gallery', [Pages::class, 'gallery']);
@@ -29,7 +29,6 @@ Route::get('/iba-approved', [Pages::class, 'iba_approved']);
 Route::get('/blogs', [Pages::class, 'blogs']);
 Route::get('/branches', [Pages::class, 'branches']);
 Route::get('/blogs/{slug}', [Pages::class, 'blog']);
-Route::get('/services/{slug}', [Pages::class, 'service']);
 
 Route::post('/quick-inquiry', [Inquiries::class, 'quick_inquiry']);
 Route::post('/call-back-request', [Inquiries::class, 'call_back_request']);
@@ -128,4 +127,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/consignments/{id}', [Cons
 Route::middleware(['auth:sanctum', 'verified'])->post('/consignments/{id}', [Consignment::class, 'post_consignment']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/consignments/{id}/delete', [Consignment::class, 'delete_consignment']);
 
-Route::get('/{slug}', [Pages::class, 'branch']);
+Route::get('/{slug}', [Pages::class, 'branch_service']);

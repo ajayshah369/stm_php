@@ -53,14 +53,28 @@ class Consignment extends Controller
 
     public function post_create(Request $request) {
         $data = array();
-        $data['consignment_number'] = Str::uuid()->toString();
+        $data['consignment_number'] = $request->input('consignment_number');
         $data['person_name'] = $request->input('person_name');
         $data['person_email'] = $request->input('person_email');
         $data['truck_number'] = $request->input('truck_number');
         $data['estimate_delievery'] = $request->input('estimate_delievery');
         $data['check_points'] = serialize(array($request->input('check_points')));
 
-        $d = DB::table('consignments')->insert($data);
+        try {
+            DB::table('consignments')->insert($data);
+        } catch (\Illuminate\Database\QueryException $e) {
+            $error;
+            if ($e->getCode() == '23000') {
+                $error = 'Duplicate Consignment number';
+            } else if ($e->getCode() == '22007') {
+                $error = 'Invalid date';
+            } else {
+                $error = 'Unknown error';
+            }
+            return response()->json($error, 400);
+        }
+
+        $data['app_url'] = env('APP_URL');
 
         \Mail::to(array(env('MAIL_TO'), $data['person_email']))->send(new ConsignmentM($data));
 

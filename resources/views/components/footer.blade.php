@@ -15,7 +15,7 @@
 			<div class="footer_content" >
 			<h3>Our Services</h3>
 			@foreach ($top_services as $service)
-                <a href="/services/{{$service->slug}}">{{$service->title}}</a>
+                <a href="/{{$service->slug}}">{{$service->title}}</a>
             @endforeach
 		</div>
 		<div class="footer_content">

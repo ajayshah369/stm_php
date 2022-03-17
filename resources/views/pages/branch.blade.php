@@ -55,7 +55,7 @@
 			<h3>We provide following services from {{$branch->title}}:</h3>
 			<ul>
 				@foreach ($services as $service)
-				<li><a href="/services/{{$service->slug}}">{{$service->title}}</a></li>
+				<li><a href="/{{$service->slug}}">{{$service->title}}</a></li>
 				@endforeach
 			</ul>
 		</div>

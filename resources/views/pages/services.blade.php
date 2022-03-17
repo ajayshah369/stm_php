@@ -19,7 +19,7 @@
 				<h4>{{$service->title}}</h4>
 				<p>{{ Str::limit($service->p1, 200, $end=' . . .') }}</p>
 				<div style="width: 100%"
-					><a href="/services/{{$service->slug}}">View Service</a></div
+					><a href="/{{$service->slug}}">View Service</a></div
 				>
 			</div>
 			@endforeach

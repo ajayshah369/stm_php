@@ -38,11 +38,11 @@
 				</a>
 				<div id="services-list">
 					@foreach ($services as $service)
-						<a href="/services/{{$service->slug}}">{{$service->title}}</a>
+						<a href="/{{$service->slug}}">{{$service->title}}</a>
 					@endforeach 
 				</div>
 			</div>
-			<a href="/process" class="{@if ($active == 'process') active @endif}"
+			<a href="/packers-and-movers-process" class="{@if ($active == 'process') active @endif}"
 				>Process</a
 			>
 			<a href="/clients" class="{@if ($active == 'clients') active @endif}"
@@ -68,6 +68,9 @@
 			<a href="/blogs" class="{@if ($active == 'blogs') active @endif}"
 				>Blogs</a
 			>
+			<a href="/consignments/track"
+				>Track</a
+			>
 		</nav>
 		<div class="nav_toggle">
 			<input type="checkbox" id="nav-toggle-checkbox" />
@@ -87,11 +90,11 @@
 				</a>
 				<span id="services-list-2">
 					@foreach ($services as $service)
-							<a href="/services/{{$service->slug}}">{{$service->title}}</a>
+							<a href="/{{$service->slug}}">{{$service->title}}</a>
 					@endforeach
 				</span>
 			</span>
-				<a href="/process" class="{@if ($active == 'process') active @endif}"
+				<a href="/packers-and-movers-process" class="{@if ($active == 'process') active @endif}"
 					>Process</a
 				>
 				<a href="/clients" class="{@if ($active == 'clients') active @endif}"
@@ -116,6 +119,9 @@
 			>
 			<a href="/blogs" class="{@if ($active == 'blogs') active @endif}"
 				>Blogs</a
+			>
+			<a href="/consignments/track"
+				>Track</a
 			>
 			</label>
 			<label for="nav-toggle-checkbox" id="backdrop"></label>

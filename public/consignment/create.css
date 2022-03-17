@@ -41,3 +41,9 @@ form button {
 form button:hover {
     background-color: #205067;
 }
+
+#error {
+    color: #ca1f26;
+    font-weight: 700;
+    margin-top: 1em;
+}
