@@ -34,7 +34,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD
 <body>
   <h4>Your Consignment has been started by 1st Shivam Trans Movers.</h4>
   <p>Your Consignment Number is: <span>{{$data['consignment_number']}}</span></p>
-  <a class="box" href="{{$data['app_url']}}/consigments/track/{{$data['consignment_number']}}">Track Your Consignment</a>
-  <p>Or <a href="http://127.0.0.1/consignments/track">Click Here</a> and enter the Consignment Number</p>
+  <a class="box" href="{{$data['app_url']}}/consignments/track/{{$data['consignment_number']}}">Track Your Consignment</a>
+  <p>Or <a href="{{$data['app_url']}}/consignments/track">Click Here</a> and enter the Consignment Number</p>
 </body>
 </html>
